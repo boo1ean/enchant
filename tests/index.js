@@ -21,6 +21,17 @@ test('Object schema undefined properties clean up', function (t) {
 	t.end();
 });
 
+test('Passing empty object to schema with defaults', function (t) {
+	var e = tr({
+		a: tr().def('beep'),
+		b: tr().def('boop')
+	});
+
+	t.deepEqual(e({}), { a: 'beep', b: 'boop' });
+	t.deepEqual(e({ c: 'blah' }), { a: 'beep', b: 'boop', c: 'blah' });
+	t.end();
+});
+
 test('transform def', function (t) {
 	t.equal(tr().def('abc').apply(null), 'abc');
 	t.equal(tr().def('abc').apply('bcd'), 'bcd');
