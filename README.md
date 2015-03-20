@@ -12,8 +12,8 @@ npm install enchant
 
 ```js
 
-// Define transform function using chainable interface
-var contactRequestTransform = t({
+// Define transform function
+var transform = t({
 	name: t().firstCharUpper().slice(0, 5),
 	email: t().lowercase(),
 	body: t().stripTags().trim()
@@ -33,6 +33,39 @@ contactRequestTransform({
 	email: 'johny.the.wild@gmail.com',
 	body: 'uhaha!'
 }
+```
+
+## Transforms
+
+All transform are chainable.
+
+### .lowercase()
+
+Lowercase string
+
+### .def(defaultValue)
+
+Set default value
+
+```js
+t().def('beep').apply(null) === 'beep'; // true
+```
+
+### .del()
+
+Remove property from object
+
+```js
+var transform = t({
+	password: t().del()
+});
+
+transform({
+	email: 'johny@example.com',
+	password: 'qwerty123
+});
+
+// { email: 'johny@example.com' }
 ```
 
 ## License
