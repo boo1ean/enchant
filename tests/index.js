@@ -14,3 +14,9 @@ test('Object schema', function (t) {
 	t.equal(e({ email: 'BEEP' }).email, 'beep');
 	t.end();
 });
+
+test('transform def', function (t) {
+	t.equal(tr().def('abc').apply(null), 'abc');
+	t.equal(tr().def('abc').apply('bcd'), 'bcd');
+	t.end();
+})
