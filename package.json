@@ -4,7 +4,7 @@
   "description": "Transform things into something else",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node tests/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/boo1ean/enchant/issues"
   },
-  "homepage": "https://github.com/boo1ean/enchant"
+  "homepage": "https://github.com/boo1ean/enchant",
+  "dependencies": {
+    "lodash": "^3.5.0"
+  },
+  "devDependencies": {
+    "tape": "^3.5.0"
+  }
 }
