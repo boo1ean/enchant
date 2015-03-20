@@ -15,6 +15,12 @@ test('Object schema', function (t) {
 	t.end();
 });
 
+test('Object schema undefined properties clean up', function (t) {
+	var e = tr({});
+	t.deepEqual(e({ a: 'beep', b: undefined, c: undefined }), { a: 'beep' });
+	t.end();
+});
+
 test('transform def', function (t) {
 	t.equal(tr().def('abc').apply(null), 'abc');
 	t.equal(tr().def('abc').apply('bcd'), 'bcd');
