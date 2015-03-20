@@ -1,8 +1,8 @@
-## enchant your objects
+## Enchant your objects
 
 Transform objects or scalars using predefined set of transform functions.
 
-# Installation
+## Installation
 
 ```sh
 npm install enchant
@@ -35,5 +35,5 @@ contactRequestTransform({
 }
 ```
 
-# License
+## License
 MIT
