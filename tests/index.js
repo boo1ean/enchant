@@ -51,3 +51,15 @@ test('transform del', function (t) {
 
 	t.end();
 });
+
+test('transform int', function (t) {
+	t.equal(tr().int().def(0).apply('beep'), 0);
+	t.equal(tr().int().def(0).apply('123'), 123);
+	t.end();
+});
+
+test('transform float', function (t) {
+	t.equal(tr().float().def(0).apply('null'), 0);
+	t.equal(tr().float().def(0).apply('3.14'), 3.14);
+	t.end();
+});
